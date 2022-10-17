@@ -1,0 +1,3 @@
+include ':tgUnityLibrary'
+include ':app'
+rootProject.name = "tg-unity-android"

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lux_c1_60"
+    android:gravity="center_horizontal">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/dialog_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/tgui_shape_white_16"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/dialog_base_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_24"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/lux_c2"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="我是标题" />
+
+        <TextView
+            android:id="@+id/dialog_base_content"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_12"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:textColor="@color/lux_c5"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dialog_base_title"
+            app:layout_goneMarginTop="@dimen/dp_24"
+            tools:text="当前手机号存在风险，暂时无法登陆，\n如有疑问可联系客服" />
+
+        <com.yupaopao.lux.widget.button.LuxButton
+            android:id="@+id/dialog_base_cancel"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="@dimen/dp_20"
+            android:gravity="center"
+            android:text="取消"
+            android:textSize="14sp"
+            android:visibility="gone"
+            tools:visibility="visible"
+            android:layout_marginEnd="15dp"
+            app:layout_constraintEnd_toStartOf="@id/dialog_base_sure"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dialog_base_content"
+            app:lux_styleType="sub" />
+
+        <com.yupaopao.lux.widget.button.LuxButton
+            android:id="@+id/dialog_base_sure"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="确定"
+            android:layout_marginBottom="@dimen/dp_20"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/dialog_base_cancel"
+            app:layout_constraintTop_toBottomOf="@id/dialog_base_content"
+            app:lux_styleType="common" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.tg.ui.common.IconfontTextView
+        android:id="@+id/dialog_base_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/sp_20"
+        android:textColor="@color/black"
+        android:text="@string/tgui_iconfont_close"
+        android:textStyle="bold"
+        app:layout_constraintRight_toRightOf="@id/dialog_layout"
+        app:layout_constraintTop_toTopOf="@id/dialog_layout"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10"
+        android:visibility="gone"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
